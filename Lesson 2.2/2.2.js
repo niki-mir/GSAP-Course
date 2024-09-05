@@ -9,7 +9,7 @@
 const titleProject = 'Оценка Стоимости'
 console.log(typeof titleProject)
 
-const screensValue = String('шаблонные, с уникальным дизайном, с анимациями')
+const screensValue = 'шаблонные, с уникальным дизайном, с анимациями'
 console.log(typeof screensValue)
 console.log(screensValue)
 
