@@ -1,35 +1,3 @@
-// // function foo() {
-// //     console.log('Hello, world!')
-// // }
-
-// // foo()
-
-// 'use strict'
-
-// // let name = 'Nikita'
-
-// // function foo () {
-// //     let age = 27
-// //     console.log('Привет', name)
-// //     console.log('Мне', age)
-// // }
-
-// // foo()
-
-// // age = 28
-// // console.log(age)
-
-// let name = 'Nikita'
-
-// function foo() {
-//     name = 'Arsen'
-//     console.log('Hi', name)
-// }
-
-// console.log('Hi', name)
-// foo()
-
-
 const screenPrice = 10500
 console.log(screenPrice)
 
@@ -67,20 +35,12 @@ console.log(fullPrice)
 let servicePercentPrice = ~~((fullPrice * percentage) / 100)
 console.log(servicePercentPrice)
 
-if (fullPrice >= 50000) {
-    console.log('Вам скидка 10%'); 
-} else if (50000 > fullPrice > 20000) {
-    console.log('Вам скидка 5%');
-} else { (20000 >= fullPrice > 0)
-    console.log('Скидка не предусмотрена')
-}
-
-
-
+let allServicePrices = 'Стоимость всех услуг'
 let getAllServicePrices = function() {
-    allServicePrices = (screenPrice + +servicePrice1 + +servicePrice2);
+    allServicePrices = (+servicePrice1 + +servicePrice2);
     return allServicePrices;
 }
+
 getAllServicePrices()
 console.log('Стоимость всех услуг', allServicePrices)
 
@@ -94,6 +54,7 @@ getFullPrice()
 console.log('Полная стоимость проекта', fullPrice)
 
 
+let formattedTitle = 'Форматированное название проекта'
 function getTitle() {
     formattedTitle = titleProject.charAt(0).toUpperCase() + titleProject.slice(1).toLowerCase();
     return formattedTitle;
@@ -102,8 +63,19 @@ getTitle()
 console.log('Название проекта', formattedTitle)
 
 function getServicePercentPrices() {
-    servicePercentPrice = fullPrice - servicePercentPrice
+    let percentPrice = ~~((fullPrice * percentage) / 100)
+    servicePercentPrice = fullPrice - percentPrice
     return servicePercentPrice
 }
 getServicePercentPrices()
 console.log('Стоимость за вычетом процента', servicePercentPrice)
+
+function getRollbackMessage() {
+if (fullPrice >= 50000) {
+    console.log('Вам скидка 10%'); 
+} else if (20000 < fullPrice < 50000) {
+    console.log('Вам скидка 5%');
+} else if (20000 >= fullPrice > 0)
+    console.log('Скидка не предусмотрена')
+}
+getRollbackMessage()
